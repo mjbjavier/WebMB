@@ -3,19 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Captar Dinero en Todas las Formas de Valor</title>
+<title>"ValueVortex"</title>
 <style>
 /* Estilos CSS */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f7f7f7;
 }
 
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .header {
@@ -47,10 +51,26 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .donation-btn:hover {
     background-color: #0056b3;
+}
+
+.success-message {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        border-radius: 0;
+    }
 }
 </style>
 </head>
@@ -58,17 +78,17 @@ body {
 
 <div class="container">
     <div class="header">
-        <h1>MBD</h1>
-        <p>¡Invertir es ahorrar!</p>
+        <h1>Captar Dinero en Todas las Formas de Valor</h1>
+        <p>¡Ayúdanos a lograr nuestros objetivos!</p>
     </div>
 
     <form id="donation-form">
-        <label for="amount">Donación:</label>
+        <label for="amount">Monto de Donación:</label>
         <input type="number" id="amount" name="amount" class="money-input" placeholder="Ingrese la cantidad a donar" required>
         <button type="submit" class="donation-btn">Donar Ahora</button>
     </form>
 
-    <div id="success-message" style="display: none; margin-top: 20px;">
+    <div id="success-message" class="success-message">
         <p>¡Gracias por tu generosidad! Tu donación ha sido recibida con éxito.</p>
     </div>
 </div>
@@ -85,7 +105,19 @@ document.getElementById('donation-form').addEventListener('submit', function(eve
 
     // Mostrar mensaje de éxito
     document.getElementById('success-message').style.display = 'block';
+
+    // Simular el flujo de activos con una animación
+    animateMoneyFlow();
 });
+
+function animateMoneyFlow() {
+    var animation = document.createElement('div');
+    animation.classList.add('money-animation');
+    document.body.appendChild(animation);
+    setTimeout(function() {
+        animation.remove();
+    }, 2000);
+}
 </script>
 
 </body>
