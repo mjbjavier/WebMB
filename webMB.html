@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captar Dinero en Todas las Formas de Valor</title>
+<style>
+/* Estilos CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.money-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.money-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.donation-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.donation-btn:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>MBD</h1>
+        <p>¡Invertir es ahorrar!</p>
+    </div>
+
+    <form id="donation-form">
+        <label for="amount">Monto de Donación:</label>
+        <input type="number" id="amount" name="amount" class="money-input" placeholder="Ingrese la cantidad a donar" required>
+        <button type="submit" class="donation-btn">Donar Ahora</button>
+    </form>
+
+    <div id="success-message" style="display: none; margin-top: 20px;">
+        <p>¡Gracias por tu generosidad! Tu donación ha sido recibida con éxito.</p>
+    </div>
+</div>
+
+<script>
+// JavaScript para procesar la donación
+document.getElementById('donation-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
+
+    // Obtener el monto de la donación
+    var amount = document.getElementById('amount').value;
+
+    // Aquí puedes agregar la lógica para procesar la donación, por ejemplo, enviarla a una pasarela de pago, registrarla en una base de datos, etc.
+
+    // Mostrar mensaje de éxito
+    document.getElementById('success-message').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
